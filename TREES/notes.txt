@@ -1,0 +1,27 @@
+treee- heirarchial and linear data structure
+
+components of treee
+  node, leaf node, root, edge, subtree, height, size, depth
+
+binary search treee-
+  a tree whose elements have atmost 2 children
+   namely left and right
+
+max no of nodes at level i- 2^i
+
+max no of nodes in a tree with height h- 2^h-1
+
+if n-nodes, then n-1 edges
+
+    2
+  /   \
+ 4      3
+/ \     /
+7  10   4
+/
+6                  
+
+left child - 2*i
+right child- 2*i+1
+parent -i/2
+

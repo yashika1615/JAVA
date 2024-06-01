@@ -1,0 +1,60 @@
+fibonacci 
+0 1  1 2 3 5 8 13 21 34 55 
+
+fib(n) = fib(n-1) + fib(n-2)
+
+rec code
+     
+     public static int fibRec(int n){
+          if(n==0 || n==1) return n;
+          return fib(n-1)+fib(n-2);
+     }
+  
+  tc- O(2^n) - 
+
+to reduce this time complexity we memoize it 
+ 
+MECHANISM
+   f[n]-> store -> storage like fib[2]=1
+   psvm(){
+     int f[]=new int [n+1]
+   }
+
+   why n+1 bcoz we are starting from zero
+
+after memoizing the time complexity will be O(n)
+
+Memoization is a technique where we store the results of expensive function calls and reuse
+ them when the same inputs occur again.
+ Here, you've used an integer array to store the Fibonacci values that have been computed so far.
+
+there will be one step extra i.e to check if the fib[n] is already calculated or not
+ if that has then it will give the stored value and if not then it will return
+  the fib(n-1)+fib(n-2)
+
+memoization code
+
+public static int fib(int n, int f){
+    if(n==0 || n==1) return n;
+    if(f[n]!=0) return f[n];
+    f[n]= fib(n-1,f)+fib(n-2,f);
+}
+  
+the above code is dp and the above process is known as memoization'
+TIME COMPLEXITY IS LESS
+and it is one of the ways of implementing dp
+
+DP -> optimal recursion
+how to identify dp? 
+  optimal problem -> least/most/min/max/largest/best/final ans
+  some choice is given (multiple branches in recursion tree )
+
+DP-> technique in comp programming that helps to efficiently solve a class of 
+     problems that have overlapping subproblems and optimal substructure properly
+
+ways of dp 
+memoization                       tabulation(iteration) (efficient in some cases)
+(top down)                         (bottom up)
+recursion                           table/set/storage
+subproblems->storage->reuse
+
