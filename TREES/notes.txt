@@ -25,3 +25,14 @@ left child - 2*i
 right child- 2*i+1
 parent -i/2
 
+Build tree- Binary Tree representation 
+(1) define a class node
+(2) make a class binary tree
+(3) make a function for building tree that will return node
+(4) now we will traverse the nodes[] array index wise aur help se nodes banani hain
+     static idx=-1
+   -> har node pe index update ho rha hain 
+    -> so after starting the function only update the index i.e idx++;
+(5) after making that new Node , we have to make its left and right subtree
+
+

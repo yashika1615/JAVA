@@ -1,0 +1,466 @@
+Internal working of HashMap
+Is HashMap thread-safe?
+Can you inherit private methods of a class?
+Can you override private methods?
+Can you override member variables of a class?
+How to create a Singleton class
+How to do shallow copy in Java
+What is the use of Cloneable interface? Which class has the clone method? Why is the clone method in the Object class?
+Explain serialization and deserialization
+What is dependency injection in Spring Boot? How to do dependency injection in code?
+Explain @Autowired annotation
+What is the difference between @RestController and @Service?
+How do we create beans in Spring Boot?
+What are microservices? Have you heard of Discovery Service?
+
+Scenario-based Question on Design Pattern ✅
+
+Q01. Scenario: You are designing an e-commerce platform where order processing involves multiple services: Order Service, Payment Service, Inventory Service, and Shipping Service. Each service must complete its task for the order to be successful. If any service fails, previous actions need to be compensated. How will you ensure data consistency and handle failures gracefully across these distributed services?
+
+Create a stream pipeline to group a list of strings by their length.
+Write a program to count the number of occurrences of each character in a string using streams.
+Given a list of Employee objects, find the employee with the highest salary using streams.
+Using streams, filter a list of numbers to only include those greater than 10 and then find their average.
+Write a program to concatenate a list of strings into a single string, separated by commas, using streams.
+Using Java Streams, convert a list of strings to a map where the key is the string and the value is its length.
+Write a stream operation to flatten a list of lists of integers into a single list of integers.
+Given a list of transactions, filter out transactions of a specific type and collect them into a set.
+Create a stream pipeline to find the first name of the oldest person in a list of Person objects.
+Write a program to find the first non-repeating character in a string using streams.
+Using streams, find the sum of the squares of a list of integers.
+Write a stream operation to skip the first 5 elements in a list and then print the rest.
+Create a stream to generate an infinite sequence of random numbers and print the first 10.
+Using streams, partition a list of integers into even and odd numbers.
+Write a program to convert a list of strings to a list of their respective lengths using streams.
+Using streams, find the product of all elements in a list of integers.
+Create a stream pipeline to collect all unique words from a list of sentences.
+Write a program to filter out null values from a list of strings using streams.
+Using streams, merge two lists of integers and remove duplicates.
+Write a stream operation to check if any string in a list starts with a specific prefix.
+
+Lambda Expressions in Java 8 ✅
+
+What is a lambda expression in Java 8?
+What are the main benefits of using lambda expressions in Java 8?
+Explain the syntax of a lambda expression in Java 8.
+What is the relationship between functional interfaces and lambda expressions?
+How do lambda expressions improve code readability and maintainability?
+What are method references in Java 8 and how do they relate to lambda expressions?
+What is the difference between a lambda expression and an anonymous class?
+How do lambda expressions enable functional programming in Java?
+Can lambda expressions be used with collections and streams? Explain with an example.
+Explain the role of the @FunctionalInterface annotation.
+How does type inference work in lambda expressions?
+Write a lambda expression to sort a list of strings in descending order.
+How would you filter a list of integers to find all even numbers using lambda expressions and streams?
+Demonstrate how to use a lambda expression to implement a custom comparator for sorting a list of objects.
+Show how to use a lambda expression to print each element of a list.
+Implement a lambda expression to convert a list of strings to uppercase.
+Write a lambda expression to sum all elements in a list of integers.
+Create a lambda expression to find the maximum value in a list of integers.
+Demonstrate the use of a lambda expression to group elements in a list by a specific criterion.
+Implement a lambda expression to find the first element in a stream that matches a given predicate.
+Write a lambda expression to concatenate a list of strings with a delimiter.
+
+Implement a thread-safe Singleton class in Java using the double-checked locking
+
+Sol: To create a thread-safe Singleton class using double-checked locking in Java, we have to follow below steps:
+
+- Declare a private static volatile instance variable.
+- Define a private constructor to prevent instantiation from outside the class.
+- Implement a public static method that returns the Singleton instance, using double-checked locking.
+
+Implementation:
+
+public class Singleton {
+
+// Volatile keyword ensures that changes to the uniqueInstance variable are visible to all threads.
+private static volatile Singleton uniqueInstance;
+
+private Singleton() {}
+
+public static Singleton getInstance() {
+if (uniqueInstance == null) { // First check (without locking)
+synchronized (Singleton.class) {
+if (uniqueInstance == null) { // Second check (with locking)
+uniqueInstance = new Singleton();
+}
+}
+}
+return uniqueInstance;
+}
+}
+
+Core JAVA Interview Questions (Asked in Investment Banks)
+
+- How does substring () inside String works?
+- What is a classloader?
+- How is the creation of a String using new() different from that of a literal?
+- What is difference between Executor.submit() and Executer.execute() method ?
+- What do you understand by Java Memory Model?
+- How to make a class Immutable? What purpose does it solve?
+- Can you use HashMap in the multi-threaded environment? What can be the problem?
+- Can you write a critical section code for the singleton?
+- What is Singleton? is it better to make the whole method synchronized or only the critical section synchronized?
+- How do you avoid deadlock in Java?
+- How can you avoid serialization in the child class if the base class is implementing the Serializable interface?
+- What is the ConcurrentHashMap in Java and do you implement it?
+- Explain the FailFast iterator and FailSafe iterator along with examples for each.
+- What is the difference between Checked Exception and Unchecked Exception?
+- What is the difference between factory and abstract factory pattern?
+- What is marker interface?
+- When Finally block doesn’t get executed?
+- How does Garbage collection in Java works?
+- Difference between ClassNotFound vs NoClassDefError?
+- How to break Singleton?
+
+Designing a Least Recently Used (LRU) cache is a common interview question (Asked in Citi Bank)
+
+An LRU cache evicts the least recently used items first when it reaches its capacity. Here’s how we can approach this problem:
+
+Main Concepts:
+
+Cache Operations: The cache should support two primary operations:
+
+get(key): Return the value of the key if it exists in the cache, otherwise return -1.
+put(key, value): Insert or update the value of the key. If the cache reaches its capacity, it should invalidate the least recently used item.
+
+Data Structures:
+
+HashMap: For O(1) access to cache items by key.
+Doubly Linked List: To keep track of the usage order of cache items. The most recently used items are moved to the front, and the least recently used items are at the end.
+
+Class Structure
+
+LRU Cache Class
+
+This class will contain the core logic of the LRU cache.
+
+Attributes:
+
+capacity: The maximum number of items the cache can hold.
+map: A HashMap that maps keys to nodes in the doubly linked list.
+head and tail: Nodes to represent the boundaries of the doubly linked list.
+
+Methods:
+
+get(int key): Retrieves an item from the cache.
+put(int key, int value): Adds or updates an item in the cache.
+Helper methods for managing the doubly linked list:
+addNode(Node node): Adds a new node right after the head.
+removeNode(Node node): Removes an existing node from the list.
+moveToHead(Node node): Moves an existing node to the head.
+popTail(): Removes the node at the tail and returns it.
+
+Node Class
+
+This class represents each node in the doubly linked list.
+
+Attributes:
+
+key: The key of the cache item.
+value: The value of the cache item.
+prev: Pointer to the previous node.
+next: Pointer to the next node.
+
+1. What is the difference between HashMap and HashTable?
+2. How does hashmap work internally?
+3. What is a singleton design pattern?
+4. What is the Runtime exception? How to create a custom runtime exception?
+5. What are the bean scopes? Difference between singleton and Request bean scope?
+6. What are actuators?
+7. Which algorithm is used in garbage collector?
+8. What is Method Reference in Java 8?
+9. Write a Program to print only numbers from an alphanumeric char array using Java 8.
+10. Can we override the static method?
+11. Write a Program to find the duplicates in an array using stream API.
+12. Explain Throw, throws, and throwable keywords in Java.
+
+4 essential patterns to ace your next coding interview:
+
+✅ Binary Search
+✅ Two Pointers
+✅ Fast & Slow Pointers
+✅ Sliding Window
+✅ Merge Intervals ️
+✅ Cyclic Sort
+✅ In-place Linked List Reversal
+✅ Tree BFS (Breadth-First Search)
+✅ Tree DFS (Depth-First Search)
+✅ Two Heaps
+✅ Top ‘K’ Elements
+✅ K-way Merge
+✅ Backtracking
+✅ Topological Sort
+
+𝐇𝐨𝐰 𝐭𝐨 𝐩𝐫𝐞𝐯𝐞𝐧𝐭 𝐒𝐢𝐧𝐠𝐥𝐞𝐭𝐨𝐧 𝐏𝐚𝐭𝐭𝐞𝐫𝐧 𝐟𝐫𝐨𝐦 𝐂𝐥𝐨𝐧𝐢𝐧𝐠? - 𝐀𝐬𝐤𝐞𝐝 𝐢𝐧 𝐃𝐞𝐥𝐨𝐢𝐭𝐭𝐞
+
+Singleton Design pattern ensures that there is only one instance of a class created in the application. This is achieved by making the constructor private and providing a public static method to access the instance.
+
+Singleton design pattern is broken when the class implements the Cloneable interface. This is because the clone() method can be used to create multiple instances of the class, which violates the singleton design pattern. To handle this, we can override clone() method and throw an exception from clone method that is 𝐂𝐥𝐨𝐧𝐞𝐍𝐨𝐭𝐒𝐮𝐩𝐩𝐨𝐫𝐭𝐞𝐝𝐄𝐱𝐜𝐞𝐩𝐭𝐢𝐨𝐧. Now, whenever user will try to create clone of singleton object, it will throw an exception and hence our class remains singleton.
+
+public class Singleton {
+
+private static Singleton instance;
+
+private Singleton() {
+}
+
+public static synchronized Singleton getInstance() {
+if (instance == null) {
+instance = new Singleton();
+}
+return instance;
+}
+
+@Override
+protected Object clone() throws CloneNotSupportedException {
+throw new CloneNotSupportedException("Cloning is not allowed.");
+}
+}
+
+We can also return the same instance from the clone method instead of throwing exception.
+
+7 𝐌𝐮𝐬𝐭 𝐊𝐧𝐨𝐰 𝐉𝐚𝐯𝐚 𝐀𝐫𝐫𝐚𝐲 𝐌𝐞𝐭𝐡𝐨𝐝𝐬 ✅
+
+Arrays.sort() - The method sorts the elements of an array in ascending order. If the array contains objects that implement the Comparable interface, the sort() method uses the compareTo() method of those objects to determine the order in which to sort them. Otherwise, the sort() method uses the natural ordering of the array's elements.
+
+Arrays.equals() - The method compares two arrays to see if they are equal. Two arrays are considered equal if they have the same length and the corresponding elements in each array are equal.
+
+Arrays.copyOf() - The method creates a copy of an array. The copyOf() method takes two parameters: the original array and the length of the new array. The new array will be a copy of the original array up to the mentioned length.
+
+Arrays.fill() - The method fills an array with the specified value. The fill() method takes three parameters: the array to fill, the start index, and the end index. The fill() method will fill the array with the specified value from the start index to the end index (excluded).
+
+Arrays.asList() - The method converts an array to a list. The asList() method takes an array as a parameter and returns a list containing the elements of the array.
+
+Arrays.binarySearch() - The method searches for an element in an array using the binary search algorithm. The binarySearch() method takes two parameters:- the array to search and the element to search for. The binarySearch() method returns the index of the element in the array if it is found, or -1 if the element is not found.
+
+Arrays.compare()- The method compares two arrays lexicographically. This means that the comparison is done element by element and refers to the natural order of the elements, such as numerical order for numbers or alphabetical order for strings.
+
+
+ 15 𝐒𝐩𝐫𝐢𝐧𝐠-𝐁𝐨𝐨𝐭 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬 𝐟𝐨𝐫 𝐉𝐚𝐯𝐚 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 ✅
+
+How to use properties defined in application properties in Java class?
+Difference between @Autowired and @Inject annotations?
+What is @RestController annotation in Springboot?
+What is the difference between @RestController and @Controller annotations?
+What is the difference between @RequestMapping and @GetMapping?
+What is Spring Boot dependency management?
+Can we create a non-web application using Spring Boot?
+How to change the port of the embedded Tomcat server in Spring Boot?
+What is the default port of Tomcat in spring boot?
+How HTTPS requests flow through the Spring Boot application?
+What is Spring Actuator? What are its advantages?
+How to enable Actuator in the Spring boot application?
+What is dependency Injection?
+What happens in the background when a Spring Boot Application is “Run as Java Application”?
+What are Spring-Boot starters? What are the available starters?
+
+
+𝐓𝐨𝐩 5 𝐃𝐞𝐬𝐢𝐠𝐧 𝐏𝐚𝐭𝐭𝐞𝐫𝐧𝐬 𝐀𝐬𝐤𝐞𝐝 𝐢𝐧 𝐉𝐚𝐯𝐚 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰
+
+- Builder Design Pattern
+- Singleton design pattern
+- Observer Design pattern
+- SAGA Design pattern
+- CQRS Design Pattern
+
+✅What is the Optional class?
+✅Why do we need Optionals?
+✅How does an Optional work internally?
+✅How do you create an Optional object?
+✅What are the common methods of the Optional class?
+✅How do you avoid NullPointerException using Optionals?
+✅Compare Optionals with null checks.
+✅What is the difference between orElse() and orElseGet()?
+✅How do you perform map and flatMap operation with Optionals?
+✅Can you chain multiple Optional operations together?
+✅When should you avoid using Optionals?
+✅Can you create your own class that works similarly to Optional?
+
+𝐓𝐞𝐬𝐭𝐢𝐧𝐠 𝐢𝐬𝐧'𝐭 𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭, 𝐬𝐚𝐢𝐝 𝐧𝐨 𝐨𝐧𝐞 𝐞𝐯𝐞𝐫.
+
+But have you ever felt overwhelmed with which Java testing tool to pick?
+
+Here are 5 Java testing tools you should definitely know:
+
+1️⃣ JUnit
+● Unit testing framework
+● Simple and easy to use
+● Enhances code quality
+
+2️⃣ Mockito
+● Mocking framework for unit tests
+● Creates dummy objects
+● Simplifies testing complex code
+
+3️⃣ TestNG
+● Testing framework
+● Flexible testing methods
+● Parallel execution
+
+4️⃣ JaCoCo
+● Code coverage tool
+● Analyzes code quality
+● Generates reports
+
+5️⃣ Cucumber
+● BDD framework
+● Easy to understand
+● Enhances collaboration between developers, testers, and stakeholders
+
+Remember:
+
+“Testing shows the presence, not the absence of bugs.”
+So, ensure you’re testing your code using the right tools!
+
+✓ What is the difference between checked and unchecked exceptions in Java? Provide examples of each.
+
+✓ Explain the concept of garbage collection in Java. How does it help in memory management?
+
+✓ What is the purpose of the "final" keyword in Java? How is it used in different contexts, such as final variables, final methods, and final classes?
+
+✓ Describe the concept of Java's "equals()" and "hashCode()" methods. Why are they important when working with objects?
+
+✓ What is method chaining in Java? Provide an example of how it can be used effectively.
+
+✓ Explain the differences between "==", ".equals()", and "hashCode()" when comparing objects in Java.
+
+✓ What is the purpose of the "transient" keyword in Java? When and why would you use it?
+
+✓ Discuss the differences between a shallow copy and a deep copy of objects in Java. How can you achieve each type of copy?
+
+✓ What is the role of the "synchronized" keyword in Java? How does it relate to multithreading and thread safety?
+
+✓ Explain the principles of the SOLID design principles.
+
+
+✓ What is the difference between JDK, JRE, and JVM?
+
+✓ Explain the concept of OOP (Object-Oriented Programming) and its principles.
+
+✓ What are the differences between abstract classes and interfaces in Java?
+
+✓ How does exception handling work in Java? Explain try, catch, and finally block.
+
+✓ What is the significance of the "static" keyword in Java? How is it used?
+
+✓ What are the access modifiers in Java (e.g., public, private, protected, default)? Explain their visibility and usage.
+
+✓ How does Java handle multithreading, and what are the ways to create and manage threads?
+
+✓ What is the difference between String, StringBuilder, and StringBuffer classes in Java?
+
+✓ Explain the Java Collections Framework and the differences between ArrayList and LinkedList.
+
+✓ What is the difference between method overloading and method overriding in Java?
+
+1. What is Object-Oriented Programming (OOP)?
+2. What are the four fundamental principles of OOP?
+3. Explain Encapsulation, Inheritance, Polymorphism, and Abstraction in OOP.
+4. What is a class, and what is an object in OOP?
+5. What is the difference between a class and an object?
+6. How do you achieve data hiding in OOP, and why is it important?
+7. What is the purpose of constructor methods in a class?
+8. Explain the concept of inheritance and its advantages in OOP.
+9. How do you implement multiple inheritances in programming languages that support it?
+10. What is the difference between method overloading and method overriding?
+11. Describe the concept of polymorphism and its types (compile-time and runtime polymorphism).
+12. What is an abstract class, and when do you use it?
+13. How are interfaces different from abstract classes?
+14. Explain the concept of composition in OOP.
+15. What is a static method, and how does it differ from an instance method?
+16. Describe the "has-a" and "is-a" relationships in OOP with examples.
+17. How do you prevent a class from being instantiated or inherited in some programming languages?
+18. What is the purpose of the final keyword in OOP?
+19. Explain the concept of method chaining.
+20. How do you handle exceptions in OOP?
+
+what is java collections framework?
+what are the advanatges of collection framework in java
+what are the different types of collection in java collections framework?
+what are the diff b/w list, set and a map?
+what do you understand by iterator in java collection framework?
+how the collections objects are stored in java?
+explain diff b/w linked list and array list?
+diff b/w fail fast and fail-safe iterator?
+what is set in java collections framework and list down its various implementations?
+what is map interface?
+what is concurrentHashMap in java and how do you implement it ?
+what is cmparable and comparator interface?
+what are diff ways to iterate over a list?
+what is default size of the load factor in the hashing-based collection?
+what is CopyOnWriteArrayList in java?
+Can maps have duplicate keys?
+
+Threads- threads are like indepedent  superheroes that work together to make your program faster and more efficient. Think of them as separate paths of execution within your program.
+Each thread can perfrom its own set of tasks concurrently, allowing multiple things to happen at the same time.
+
+CREATING THREADS.
+creating threads in java can be done by either extending the Thread class or implementing the Runnable interface.
+
+USING THE THREAD CLASS :
+ public static MyThread extends Thread{
+public void run(){
+// code to be executed by the thread
+}
+}
+// creating and starting the thread
+MyThread myThread= new MyThread();
+myThread.start();
+
+USING THE RUNNABLE INTERFACE:
+public class MyRunnable implements Runnable{
+public void run(){
+//code to be executed by the thread
+}
+}
+// creating and starting the thread
+Thread thread= new Thread(new Runnable());
+thread.start();
+
+THREAD LIFECYCLE:
+threads have their own lifecycle , just like living beings 
+understanding their lifecycle helps us manage threads effectively . it consists of several states including 
+
+new->runnable->running->terminated 
+           |      |
+             ---Nonrunnable(blocked)
+
+THREAD SYNCHRONIZATION
+thread synchronization is a vital concept when multiple threads access shared resources concurrently. Without proper synchronization, conflicts and data inconsistencies may occur. Java provides synchronization mechanisms to ensure thread safety and prevent such issues.
+in java, you can achieve thread synchronization using the synchronized keyword. By applying synchronization, only one thread can access a synchronized block or methods at a time.
+
+private class Counter{
+private int count;
+public synchronized void increment(){
+count++;
+}
+}
+
+in this example, the increment() method is declared as synchronized. This means that when multiple threads invoke the increment() method simultaneously, only one thread will be allowed to execute it at a time. The other threads will wait until the synchronized block is available.
+
+IMPORTANT THREAD METHODS
+start()- starts the execution of a thread by invoking its run() method.
+run()- contains the code that will be executed by the thread when its started.
+sleep()- pauses the execution of the current thread for a specified amount of time.
+yield()- temporarily gives up the cpu to allow other threads to execute
+interrupt()- interrupts the execution of  athread, causing it to throw an InterruptedException
+isAlive()-Checks if a thread is currently running
+setpriority()- sets the priority of a thread (1-10) to determine its preference for cpu time
+
+diff b/w stringbuilder and string buffer class?
+explain the concept of method overriding and method overloading in java
+concept of autoboxing and unboxing in java
+purpose of finalize() method in java?
+diff ways to create a thread in java
+concept of method references in java8
+explain the concept of polymorphism in java with example
+pirpose of super keyword in java
+concept of object oriented programming and its principle?
+what are solid principles in java ? explain each principle
+purpose of this keyword in java
+diff b/w final, finally and finalize keywords in java
+role of comparable and comparators
+
+how does 

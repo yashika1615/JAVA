@@ -1,0 +1,37 @@
+1. What is the use of the 'inline' keyword in C++?
+2. Explain the diamond problem in C++.
+3. What is a friend function in C++?
+4. What is the difference between 'struct' and 'class' in C++?
+5. What is the difference between delete and deletel] in C+
++?
+6. What are preprocessor directives in C++?
+7. What is the purpose of the 'explicit' keyword in C++?
+8. Explain the concept of "deep copy" and "shallow copy" in C++.
+9. What is the use of the 'namespace' keyword in C++?
+10. What is a static member in C++?
+11. What is the difference between malloc() and new in C+
++?
+12. What is a constructor in C++?
+13. Explain the differences between C and C++.
+14. What is a virtual function in C++?
+15. What is a template in C++?
+16. What are access specifiers in C++?
+17. What is a move constructor in C++?
+18. What is a destructor in C++?
+19. What are the differences between pointers and references in C++?
+20. How is exception handling implemented in C++?
+21. What is a class and an object in C++?
+22. What is the purpose of the 'typedef" keyword in C++?
+23. Explain the use of smart pointers in C++.
+24. What are virtual destructors in C++?
+25. What is dynamic memory allocation in C++?
+26. What are rvalue references in C++?
+27. What is the purpose of the 'std' namespace?
+28. What is the use of the "mutable" keyword in C++?
+29. What is the difference between stack and heap memory in C++?
+30. What is the significance of the "this" pointer in C++?
+31. What are the uses of the 'const' keyword in C++?
+32. Explain memory leaks in C++ and how to avoid them.
+33. How does C++ handle memory management differently than Java?
+34. What is a copy constructor in C++?
+35. What is the Standard Template library (STI) in C++?

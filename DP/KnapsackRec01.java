@@ -2,7 +2,7 @@ package DP;
 
 import java.util.*;
 
-public class KnapsackRec {
+public class KnapsackRec01 {
     public static int Knapsack(int val[], int wt[], int W, int n) {
         // base case
         if (W == 0 || n == 0)
