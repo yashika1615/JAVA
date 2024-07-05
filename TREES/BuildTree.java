@@ -10,30 +10,28 @@ public class BuildTree {
         }
     }
 
-    static class BinaryTree {
-        static int idx = -1;
+    // static class BinaryTree {
+    static int idx = -1;
 
-        public static Node buildtree(int nodes[]) {
-            idx++;
+    public static Node buildtree(int nodes[]) {
+        idx++;
 
-            if (idx >= nodes.length || nodes[idx] == -1) {
-                return null;
-            }
-
-            Node newNode = new Node(nodes[idx]);
-            newNode.left = buildtree(nodes);
-            newNode.right = buildtree(nodes);
-
-            return newNode;
+        if (idx >= nodes.length || nodes[idx] == -1) {
+            return null;
         }
+
+        Node newNode = new Node(nodes[idx]);
+        newNode.left = buildtree(nodes);
+        newNode.right = buildtree(nodes);
+
+        return newNode;
     }
+}
 
-    public static void main(String[] args) {
-        int nodes[] = { 1, 2, 4, -1, -1, 3, 4, 5, -1, -1, 6 };
-        BinaryTree tree = new BinaryTree();
-        Node root = tree.buildtree(nodes);
+public static void main(String[] args) {
+    int nodes[] = { 1, 2, 4, -1, -1, 3, 4, 5, -1, -1, 6 };
+    // BinaryTree tree = new BinaryTree();
+    Node root = buildtree(nodes);
 
-        System.out.println(root.data);
-    }
-
+    System.out.println(root.data);
 }
