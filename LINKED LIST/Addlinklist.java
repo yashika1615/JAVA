@@ -173,6 +173,29 @@ public class Addlinklist {
         return helper(head, key);
     }
 
+    public static void insertAtanyindex(int idx, int val) {
+        // create a new Node
+        Node t = new Node(val);
+        // initialise temp with head
+        Node temp = head;
+        // traverse the linked list'
+        if (idx == size) {
+            addLast(5);
+            return;
+        } else if (idx == 0) {
+            addFirst(1);
+            return;
+        } else if (idx > size || idx < 0) {
+            System.out.println("wrong index");
+            return;
+        }
+        for (int i = 0; i < idx - 1; i++) {
+            temp = temp.next;
+        }
+        t.next = temp.next;
+        temp.next = t;
+    }
+
     public static void print() {
         if (head == null) {
             System.out.println("Linked list is empty");
@@ -194,11 +217,16 @@ public class Addlinklist {
         ll.addLast(3);
         ll.addLast(4);
         ll.addMiddle(2, 9);
+        ll.addFirst(7);
+        ll.addFirst(8);
+        ll.addFirst(5);
         ll.print();
         // System.out.println(ll.size);
         // System.out.println(ll.searchLoop(1));
         // System.out.println(ll.searchLoop(10));
         System.out.println(ll.searchRecursively(3));
         System.out.println(ll.searchRecursively(10));
+        ll.insertAtanyindex(6, 6);
+        ll.print();
     }
 }
