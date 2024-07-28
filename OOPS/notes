@@ -1,0 +1,2260 @@
+Object-oriented programming (OOP) is a programming paradigm that uses "objects" and their interactions to design applications and computer programs. Real-world examples of OOP concepts include objects such as a car, a person, and a bank account. These objects have properties (e.g. a car has a make, model, and color) and methods (e.g. a car can start, stop, and drive). OOP is used in many modern programming languages such as Java, C++, and Python to build robust and maintainable software.
+
+Object Oriented Programming is based on Objects and not Classes.
+
+Example 2:
+Let’s say you have the blueprint of your future house over a hilltop ⛰️
+
+Class: BluePrint
+Object: House
+Data: People living in the house
+
+Important Points:
+No memory is allocated when a class is created. Memory is allocated only when an object is created, i.e., when an instance of a class is created.
+1. Parent Class: A class that an object shares all the properties off. (base class or superclass class)
+2. Class: A particular type of class that does have objects.
+3. Sub Class: A particular type of class that has a parent class. (derived class, extended class, or child class)
+
+OBJECT:
+Class: Animal
+Object: Cat, Dog, Lion
+
+Each object has its own identity, attribute, and behavior.
+Consider both class and object. When we consider an actual laptop, the factory or the mechanical system that manufactures the laptop is the class and the laptop produced is it’s object
+
+ENCAPSULATION (Information Hiding)
+State (Private variables)
+Methods (Behaviour)
+
+Example 1:
+Class: Person
+Data Member: “socialSecurityNumber” (private)
+
+A method called “bankTransaction()” is implemented, that function might then access the “socialSecurityNumber” variable.
+
+Such a class would effectively encapsulate a person’s personal information.
+
+Example 2:
+class Encapsulation{
+private:
+    int x;
+public:
+    void set(int a){
+        x =a;
+    }
+    int get(){
+        return x;
+}
+};
+int main() {
+    Encapsulation obj;
+    obj.set(5);
+    cout<<obj.get(); 
+    return 0;
+}
+OUTPUT: 5
+
+
+The variable x and the functions get() and set() are binded together which is nothing but encapsulation.
+
+CAR = [Steering, Wheels, Engine, etc]
+
+More Examples:
+In real time we are using Encapsulation for Security Purpose.
+Most commonly used example is the Medical Capsule.
+Encapsulation = Abstraction + Data Hiding.
+
+ABSTRACTION
+Examples:
+Dialling a number call: Some method internally runs and connects the call but what is it doing we don’t know.
+Clicking on green button: Sends signals to calling person’s mobile but we are unaware of how it is doing.
+ATM machines: Withdraw cash, deposit cash, check balance, print bills, etc. It shows only the main things like getting inputs and giving the output.
+Gmail: Type email and password and click submit, It will show Compose, Inbox, Outbox, Sent mails. How it works internally?
+TV Remote is a interface between User and TV. User does not need to know the inside circuit details.
+
+INHERITANCE
+There are mainly 5 types of inheritance,
+1. Single level inheritance
+2. Multi-level inheritance
+3. Hierarchical inheritance
+4. Hybrid inheritance
+5. Multiple inheritance
+
+Examples:
+Parent Class: Animals.
+Class: Insect
+SubClass: Ants, Grasshopper
+
+Insects all have almost the same characteristics, such as six legs and an exoskeleton.
+
+Here also we can also inherit common properties like name, sound, color, breed from Animal class and create classes like Dog, Cat, Horse and etc.
+
+You probably won’t finish this article. In fact, I may have already lost you to another tab in your browser. :(
+
+
+POLYMORPHISM
+Examples:
+Base Class: Animal
+Derived Class: “Cat” and “Dog”
+
+class Animal{
+public:
+    nameNoise(){...}
+}
+class Cat: public Animal{
+...
+    meow(){...}
+}
+class Dog: public Animal{
+    bark(){...}
+...
+}
+
+
+We can override the “makeNoise” function that is inherited by the subclasses “Cat” and “Dog” to be “meow” and “bark,” respectively if the Animal class contains a way to create a noise named “makeNoise.”
+
+Then, another function may be built that takes any Animal object as a parameter and calls the “makeNoise” member function on it.
+
+Depending on the type of animal object that was supplied to the function, the noise will be either a “meow” or a “bark.”
+
+
+Let’s say Samsung mobile has a 64 MP camera available i.e. — it is having a functionality of CameraClick().
+
+Now same mobile is having Panorama mode available in camera, so functionality would be same but with mode.
+
+This type is said to be Static polymorphism or Compile time polymorphism.
+
+More examples:
+Girl: This girl can be anything, a student, a writer, a friend, a mother, a sister, a daughter, a God.
+This girl can exist in different ways in different situations.
+Sound of animals: Different animals make different sounds.
+Behaviour: We behave differently in front of elders, and friends. A single person is behaving differently at different time.
+A Software Engineer can perform different task at different instance of time depending on the task assigned to him. She can do coding, testing, analysis and designing depending on the task assign and the requirement.
+Stadium of commonwealth games. Single stadium but it perform multiple task like swimming, lawn tennis etc.
+Summary:
+OOPs have following features:
+Object: Instance of Class
+Class: Blue print of Object
+Encapsulation: Protecting our Data | Secure implementation
+Polymorphism: Different instances according to different behaviors depending on data types used
+Abstraction: Hiding our irrelevant Data, or Restricts the data for relevance
+Inheritance: One property of object is acquiring to another property of object, saves time.
+Related Example 1:
+Let’s consider a class Person,
+
+It defines what a “Person” is.
+— (She/he) is a human being,
+— (She/he) got a brain, hands, legs, etc
+
+The people are like an object.
+— They obey the rules specified above (being a human being, having hands, legs etc) ~ Object, instances of the class.
+
+Derived class: Artists
+— Artists have all the properties of persons, they also have additional features like, they can draw nice pictures.~ Inheritance.
+
+— An artist will have some understanding of pictures, colour combinations etc… like data inside an object. If you ask him to draw a nice picture(call the function to draw a picture), he draws(returns) a nice picture.
+
+— The internal details like what was happening in his brain, movements of his fingers etc, are hidden from you (user). ~ Abstraction.
+
+— His understandings (data), fingers, ears (functions) etc, some how coordinate internally to provide a simple interface (ears: you can tell him) to you(user). ~ Encapsulation.
+
+Related Example 2:
+Jeff Goodell: Would you explain, in simple terms, exactly what object-oriented software is?
+
+Steve Jobs: Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things.
+
+And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction.
+
+Here’s an example:
+If I’m your laundry object, you can give me your dirty clothes and send me a message that says, “Can you get my clothes laundered, please?.”
+
+I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets.
+
+So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, “Here are your clean clothes.”
+
+You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can’t even hail a taxi. You can’t pay for one, you don’t have dollars in your pocket.
+
+Yet I knew how to do all of that. And you didn’t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction.
+
+That’s what objects are. They encapsulate complexity, and the interfaces to that complexity are high level.
+
+Related Example 3:
+You bought an iPhone. Kudos!
+
+Your mom and dad have iPhones too. It’s an iFamily! Each of those iPhone is a copy (Object) of the design specs (Class) stored with Apple.
+
+You wan’t to open it up? Nope! Glued shut. Typical Jobs, Use the touchscreen and buttons to use.
+~ Abstraction.
+
+You wanna make a call? Play a movie? Hear some music? Camera. Touch screen. Accelerator. Gyrometer. Everything built into that slim device.
+~ Encapsulation.
+
+You hate the boring theme. Want to change it? Jailbreak! Cydia! You started with an iPhone, and ended with something way better.
+~ Inheritance.
+
+Your iPhone was brand new. Not anymore. Why? Because you broke the warranty by jailbreaking!
+~ Polymorphism.
+
+
+OOP Principles
+There are some OOPS principle that need to be satisfied while creating a class. This principle is called as SOLID, where each letter has some specification.
+
+SRP (The Single Responsibility Principle) — A class should have one, and only one responsibility.
+OCP (The Open Closed Principle) — You should be able to extend a classes behaviour, without modifying it. (Inheritance)
+LSP (The Liskov Substitution Principle) — Derived classes must be substitutable for their base classes. (Polymorphism)
+ISP (The Interface Segregation Principle) — Make fine chopped interface instead of huge interface as client cannot be forced to implement an interface which they don’t use.
+DIP (The Dependency Inversion Principle) — Depend on abstractions, not on concretions. (Abstraction)
+
+Object-Oriented Programming or Java OOPs concept refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the viewer or user, performing tasks you assign.
+
+Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOPs is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function. 
+
+Let us discuss prerequisites by polishing concepts of method declaration and message passing. Starting off with the method declaration, it consists of six components: 
+
+Access Modifier: Defines the access type of the method i.e. from where it can be accessed in your application. In Java, there are 4 types of access specifiers: 
+public: Accessible in all classes in your application.
+protected: Accessible within the package in which it is defined and in its subclass(es) (including subclasses declared outside the package).
+private: Accessible only within the class in which it is defined.
+default (declared/defined without using any modifier): Accessible within the same class and package within which its class is defined.
+The return type: The data type of the value returned by the method or void if it does not return a value.
+Method Name: The rules for field names apply to method names as well, but the convention is a little different.
+Parameter list: Comma-separated list of the input parameters that are defined, preceded by their data type, within the enclosed parentheses. If there are no parameters, you must use empty parentheses ().
+Exception list: The exceptions you expect the method to throw. You can specify these exception(s).
+Method body: It is the block of code, enclosed between braces, that you need to execute to perform your intended operations.
+Message Passing: Objects communicate with one another by sending and receiving information to each other. A message for an object is a request for execution of a procedure and therefore will invoke a function in the receiving object that generates the desired results. Message passing involves specifying the name of the object, the name of the function and the information to be sent.
+
+Master OOP in Java Write cleaner, more modular, and reusable Java code by building a foundation in object-oriented programming with Educative’s interactive course Learn Object-Oriented Programming in Java. Sign up at Educative.io with the code GEEKS10 to save 10% on your subscription.
+Now that we have covered the basic prerequisites, we will move on to the 4 pillars of OOPs which are as follows. But, let us start by learning about the different characteristics of an Object-Oriented Programming Language.
+
+OOPS concepts are as follows: 
+
+Class
+Object 
+Method and method passing
+Pillars of OOPs
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+Compile-time polymorphism
+Runtime polymorphism
+
+A class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times. This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
+
+Modifiers: A class can be public or have default access (Refer to this for details).
+Class name: The class name should begin with the initial letter capitalized by convention.
+Superclass (if any): The name of the class’s parent (superclass), if any, preceded by the keyword extends. A class can only extend (subclass) one parent.
+Interfaces (if any): A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.
+Body: The class body is surrounded by braces, { }.
+An object is a basic unit of Object-Oriented Programming that represents real-life entities. A typical Java program creates many objects, which as you know, interact by invoking methods. The objects are what perform your code, they are the part of your code visible to the viewer/user. An object mainly consists of: 
+
+State: It is represented by the attributes of an object. It also reflects the properties of an object.
+Behavior: It is represented by the methods of an object. It also reflects the response of an object to other objects.
+Identity: It is a unique name given to an object that enables it to interact with other objects.
+Method: A method is a collection of statements that perform some specific task and return the result to the caller. A method can perform some specific task without returning anything. Methods allow us to reuse the code without retyping it, which is why they are considered time savers. In Java, every method must be part of some class, which is different from languages like C, C++, and Python. 
+
+
+public class GFG {
+    
+    static String Employee_name;
+    static float Employee_salary;
+
+    static void set(String n, float p) {
+        Employee_name  = n;
+        Employee_salary  = p;
+    }
+
+    static void get() {
+        System.out.println("Employee name is: " +Employee_name );
+        System.out.println("Employee CTC is: " + Employee_salary);
+    }
+
+    public static void main(String args[]) {
+        GFG.set("Rathod Avinash", 10000.0f);
+        GFG.get();
+    }
+}
+
+Output
+Employee name is: Rathod Avinash
+Employee CTC is: 10000.0
+Let us now discuss the 4 pillars of OOPs:
+
+Pillar 1: Abstraction
+Data Abstraction is the property by virtue of which only the essential details are displayed to the user. The trivial or non-essential units are not displayed to the user. Ex: A car is viewed as a car rather than its individual components.
+Data Abstraction may also be defined as the process of identifying only the required characteristics of an object, ignoring the irrelevant details. The properties and behaviors of an object differentiate it from other objects of similar type and also help in classifying/grouping the object.
+
+Consider a real-life example of a man driving a car. The man only knows that pressing the accelerators will increase the car speed or applying brakes will stop the car, but he does not know how on pressing the accelerator, the speed is actually increasing. He does not know about the inner mechanism of the car or the implementation of the accelerators, brakes etc. in the car. This is what abstraction is. 
+
+In Java, abstraction is achieved by interfaces and abstract classes. We can achieve 100% abstraction using interfaces.
+
+The abstract method contains only method declaration but not implementation.
+
+Demonstration of Abstract class 
+
+
+//abstract class
+abstract class GFG{
+  //abstract methods declaration
+  abstract void add();
+  abstract void mul();
+  abstract void div();
+}
+Pillar 2: Encapsulation
+It is defined as the wrapping up of data under a single unit. It is the mechanism that binds together the code and the data it manipulates. Another way to think about encapsulation is that it is a protective shield that prevents the data from being accessed by the code outside this shield. 
+
+Technically, in encapsulation, the variables or the data in a class is hidden from any other class and can be accessed only through any member function of the class in which they are declared.
+In encapsulation, the data in a class is hidden from other classes, which is similar to what data-hiding does. So, the terms “encapsulation” and “data-hiding” are used interchangeably.
+Encapsulation can be achieved by declaring all the variables in a class as private and writing public methods in the class to set and get the values of the variables.
+Demonstration of Encapsulation:
+
+
+//Encapsulation using private modifier 
+
+//Employee class contains private data called employee id and employee name
+class Employee {
+    private int empid;
+      private String ename;
+}
+Pillar 3: Inheritance 
+Inheritance is an important pillar of OOP (Object Oriented Programming). It is the mechanism in Java by which one class is allowed to inherit the features (fields and methods) of another class. We are achieving inheritance by using extends keyword. Inheritance is also known as “is-a” relationship.
+
+Let us discuss some frequently used important terminologies:
+
+Superclass: The class whose features are inherited is known as superclass (also known as base or parent class).
+Subclass: The class that inherits the other class is known as subclass (also known as derived or extended or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.
+Reusability: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.
+Demonstration of Inheritance :
+
+
+//base class or parent class or super class
+class A{
+  //parent class methods
+  void method1(){}
+  void method2(){}
+}
+
+//derived class or child class or base class
+class B extends A{  //Inherits parent class methods
+  //child class methods
+  void method3(){}
+  void method4(){}
+}
+Pillar 4: Polymorphism
+It refers to the ability of object-oriented programming languages to differentiate between entities with the same name efficiently. This is done by Java with the help of the signature and declaration of these entities. The ability to appear in many forms is called polymorphism.
+
+E.g.
+
+
+sleep(1000) //millis
+
+sleep(1000,2000) //millis,nanos
+ 
+Note: Polymorphism in Java is mainly of 2 types: 
+
+Overloading
+Overriding 
+Example
+
+
+// Java program to Demonstrate Polymorphism
+
+// This class will contain
+// 3 methods with same name,
+// yet the program will
+// compile & run successfully
+public class Sum {
+
+    // Overloaded sum().
+    // This sum takes two int parameters
+    public int sum(int x, int y)
+    {
+        return (x + y);
+    }
+
+    // Overloaded sum().
+    // This sum takes three int parameters
+    public int sum(int x, int y, int z)
+    {
+        return (x + y + z);
+    }
+
+    // Overloaded sum().
+    // This sum takes two double parameters
+    public double sum(double x, double y)
+    {
+        return (x + y);
+    }
+
+    // Driver code
+    public static void main(String args[])
+    {
+        Sum s = new Sum();
+        System.out.println(s.sum(10, 20));
+        System.out.println(s.sum(10, 20, 30));
+        System.out.println(s.sum(10.5, 20.5));
+    }
+}
+
+Output
+30
+60
+31.0
+Conclusion
+The Object Oriented Programming (OOPs) concept in Java is a powerful way to organize and write code. It uses key ideas like classes, objects, inheritance, polymorphism, encapsulation, and abstraction to create flexible and reusable code. By using the Java OOPs concept, programmers can build complex applications more efficiently, making the code easier to manage, understand, and modify. Overall, Java’s OOPs concepts help in creating robust and scalable software solutions. To explore more Java concepts you can enroll free Java course offered by GeeksforGeeks.
+
+Object Oriented Programming (OOPs) Concept in Java – FAQ
+What is OOPs concept in Java?
+OOPs (Object-Oriented Programming) is a programming paradigm based on the concept of objects, which can contain data in the form of fields (attributes or properties) and code in the form of procedures (methods or functions). In Java, OOPs concepts include encapsulation, inheritance, polymorphism, and abstraction.
+
+Why is OOPs important in Java?
+OOPs helps in organizing and structuring code in a more manageable way, making it easier to maintain and scale Java applications. It also promotes code reusability, modularity, and flexibility, leading to efficient and robust software development.
+
+What are the main principles of OOPs in Java?
+The main principles of OOPs in Java are encapsulation, inheritance, polymorphism, and abstraction. Encapsulation ensures that the internal state of an object is hidden and can only be accessed through public methods. Inheritance allows one class to inherit properties and behavior from another. Polymorphism enables objects to be treated as instances of their parent class. Abstraction focuses on hiding the implementation details and showing only the necessary information to the outside world.
+
+How is OOPs implemented in Java?
+In Java, OOPs is implemented through classes and objects. A class serves as a blueprint for creating objects, which are instances of that class. Each object has its own set of attributes (variables) and methods (functions). By following OOPs concepts like encapsulation, inheritance, polymorphism, and abstraction, Java developers can design well-structured and maintainable code.
+
+What are the advantages of using OOPs in Java?
+Some advantages of using OOPs in Java include code reusability, modularity, flexibility, scalability, and easier maintenance. OOPs enables developers to model real-world entities as objects, leading to more intuitive and organized code. It also supports features like inheritance and polymorphism, which enhance the extensibility and readability of Java applications.
+
+Can you provide an example of OOPs concept implementation in Java?
+Sure! An example of OOPs concept implementation in Java is creating a ‘Car’ class with attributes like ‘make’, ‘model’, and ‘year’, along with methods like ‘start()’, ‘accelerate()’, and ‘stop()’. By instantiating objects from the ‘Car’ class and calling its methods, we can simulate the behavior of different car instances in a structured and object-oriented manner.
+
+
+ Object-Oriented Programming concepts are very important. Without an idea of OOP concepts, you will not be able to design systems in an object-oriented programming model. It simplifies software development and maintenance.
+
+Core OOPs Concepts:
+Object
+Class
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+Let's discuss each OOP concept with a real-world example.
+
+1. Object
+An Object is a real-time entity having some state and behavior. In Java, an Object is an instance of the class having instance variables (state) and methods (behavior). The object of a class can be created by using the new keyword in the Java Programming language.
+
+A class is a template or blueprint from which objects are created. So, an object is the instance (result) of a class.
+
+Various Definitions of an Object:
+
+An object is a real-world entity.
+An object is a runtime entity.
+An object is an entity that has a state and behavior.
+An object is an instance of a class.
+Real-world examples:
+
+Dogs have states (name, color, breed, hungry) and behaviors (barking, fetching, wagging tail). Other examples include Chairs, Bikes, Markers, Pens, Tables, Cars, Books, Apples, Bags, etc. These can be physical or logical (tangible and intangible). Object Example
+Bicycles also have states (current gear, current pedal cadence, current speed) and behaviors (changing gear, changing pedal cadence, applying brakes). 
+Read more about Objects in Java with examples at What Is Object in Java with Programming Examples.
+
+2. Class
+A class is a group of objects that have common properties. It is a template or blueprint from which objects are created. In short, a class is the specification or template of an object.
+
+Read more about Class in Java with examples at What is Class in Java with Programming Examples.
+
+Real-world example: Circle Let’s look at an example of a class and analyze its various parts in the below diagram. This example declares the class Circle, which has the member variables x, y, and radius of type Integer and the two member methods, area() and fillColor().
+
+The below diagram shows a Circle class, which is a template for creating three objects: Class is a template for creating objects
+
+3. Abstraction
+Abstraction means hiding lower-level details and exposing only the essential and relevant details to the users.
+
+Real-world examples:
+
+Car: A car abstracts the internal details and exposes to the driver only those details that are relevant to the driver's interaction with the car. Car Abstraction Example
+ATM Machine: An ATM machine allows users to perform operations like cash withdrawal, money transfer, and retrieving mini-statements without knowing the internal details of the ATM. ATM Abstraction Example
+Read more about Abstraction in Java with examples at Abstraction in Java with Example.
+
+4. Encapsulation
+Encapsulation is the process of wrapping data and methods in a single unit.
+
+In OOP, data and methods operating on that data are combined together to form a single unit, which is referred to as a Class. Encapsulation is the mechanism that binds together code and the data it manipulates and keeps both safe from outside interference and misuse.
+
+Real-world examples:
+
+Capsule: A capsule wraps different medicines inside it. Encapsulation Example
+Read more at Encapsulation in Java with Example.
+
+5. Inheritance
+Inheritance is a process of obtaining the data members and methods from one class to another class. It is a fundamental feature of object-oriented programming.
+
+Inheritance - IS-A relationship between a superclass and its subclasses.
+
+Super Class: The class whose features are inherited is known as a superclass (or a base class or a parent class).
+Sub Class: The class that inherits the other class is known as a subclass (or a derived class, extended class, or child class
+). The subclass can add its own fields and methods in addition to the superclass fields and methods.
+
+Real-world examples:
+
+Child and Parent: All the properties of a father are inherited by his son. Inheritance Example
+Java Library: The extensive use of inheritance in the Java library. For example, the Number class abstracts various numerical (reference) types such as Byte, Integer, Float, Double, Short, and BigDecimal. Inheritance in Java Core
+Read more about Inheritance at Inheritance in Java with Example.
+
+6. Polymorphism
+Polymorphism is the process of representing one form in multiple forms.
+
+Definitions of Polymorphism:
+
+Polymorphism allows us to perform a single action in different ways.
+Polymorphism allows you to define one interface and have multiple implementations.
+We can create functions or reference variables that behave differently in different programmatic contexts.
+Polymorphism means many forms.
+Real-world example: Suppose if you are in a classroom at that time you behave like a student, when you are in the market at that time you behave like a customer, and when you are at home at that time you behave like a son or daughter. Here one person presents different behaviors in different contexts. Polymorphism Real-World Example
+
+Read more at Polymorphism in Java with Example.
+
+Apart from these core OOPs concepts, there are some other terms that are used in Object-Oriented design:
+
+Association
+Composition
+Aggregation
+Delegation
+Coupling
+Cohesion
+Association
+Definition: Association represents a relationship between two or more objects where all objects have their own lifecycle and there is no owner.
+
+Real-world example:
+
+Teacher and Student: A teacher can teach multiple students, and a student can be taught by multiple teachers. Both the teacher and student objects have their own lifecycle and can exist independently.
+class Teacher {
+    private String name;
+    // constructor, getters, setters
+}
+
+class Student {
+    private String name;
+    // constructor, getters, setters
+}
+
+public class AssociationExample {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher("Mr. Smith");
+        Student student = new Student("John Doe");
+        // Association between teacher and student
+    }
+}
+Read more on Association in Java with Example.
+
+Composition
+Definition: Composition is a strong form of association where one class (the whole) contains another class (the part) and the part cannot exist without the whole.
+
+Real-world example:
+
+Car and Engine: A car has an engine, and the engine cannot exist independently without the car.
+class Engine {
+    private String type;
+
+    public Engine(String type) {
+        this.type = type;
+    }
+    // getters, setters
+}
+
+class Car {
+    private String model;
+    private Engine engine;
+
+    public Car(String model, Engine engine) {
+        this.model = model;
+        this.engine = engine;
+    }
+    // getters, setters
+}
+
+public class CompositionExample {
+    public static void main(String[] args) {
+        Engine engine = new Engine("V8");
+        Car car = new Car("Mustang", engine);
+        // Composition relationship
+    }
+}
+Read more on Composition in Java with Example.
+
+Aggregation
+Definition: Aggregation is a weak form of association where one class (the whole) contains another class (the part) but the part can exist independently of the whole.
+
+Real-world example:
+
+Library and Books: A library contains books, but a book can exist independently of the library.
+class Book {
+    private String title;
+
+    public Book(String title) {
+        this.title = title;
+    }
+    // getters, setters
+}
+
+class Library {
+    private String name;
+    private List<Book> books;
+
+    public Library(String name, List<Book> books) {
+        this.name = name;
+        this.books = books;
+    }
+    // getters, setters
+}
+
+public class AggregationExample {
+    public static void main(String[] args) {
+        Book book1 = new Book("1984");
+        Book book2 = new Book("To Kill a Mockingbird");
+        List<Book> books = Arrays.asList(book1, book2);
+        Library library = new Library("Central Library", books);
+        // Aggregation relationship
+    }
+}
+Read more on Aggregation in Java with Example.
+
+Delegation
+Definition: Delegation is a design pattern where an object expresses certain behavior to the outside but delegates responsibility for implementing that behavior to an associated object.
+
+Real-world example:
+
+Ticket Booking: A travel agent delegates the responsibility of booking different types of tickets to specialized booking classes.
+interface Booking {
+    void bookTicket();
+}
+
+class TrainBooking implements Booking {
+    @Override
+    public void bookTicket() {
+        System.out.println("Train ticket booked");
+    }
+}
+
+class FlightBooking implements Booking {
+    @Override
+    public void bookTicket() {
+        System.out.println("Flight ticket booked");
+    }
+}
+
+class BookingAgent {
+    private Booking booking;
+
+    public BookingAgent(Booking booking) {
+        this.booking = booking;
+    }
+
+    public void book() {
+        booking.bookTicket();
+    }
+}
+
+public class DelegationExample {
+    public static void main(String[] args) {
+        BookingAgent agent = new BookingAgent(new TrainBooking());
+        agent.book(); // Delegates booking to TrainBooking
+
+        agent = new BookingAgent(new FlightBooking());
+        agent.book(); // Delegates booking to FlightBooking
+    }
+}
+Read more on Delegation in Java with Example.
+
+Coupling
+Definition: Coupling refers to the degree to which one class knows about another class. Lower coupling is preferred to reduce dependencies between classes.
+
+Real-world example:
+
+Electric Appliance and Plug: An electric appliance can be plugged into any socket without knowing the specifics of the electrical system.
+class Plug {
+    public void plugIn() {
+        System.out.println("Plugged in");
+    }
+}
+
+class Appliance {
+    private Plug plug;
+
+    public Appliance(Plug plug) {
+        this.plug = plug;
+    }
+
+    public void use() {
+        plug.plugIn();
+    }
+}
+
+public class CouplingExample {
+    public static void main(String[] args) {
+        Plug plug = new Plug();
+        Appliance appliance = new Appliance(plug);
+        appliance.use();
+    }
+}
+Read more on Coupling in Java with Example.
+
+Cohesion
+Definition: Cohesion refers to the degree to which the elements of a module/class belong together. High cohesion is preferred as it indicates that a class has a well-defined responsibility.
+
+Real-world example:
+
+ATM Machine: An ATM class should only handle operations related to ATM functions like withdrawing money, checking balance, etc.
+class ATM {
+    public void withdrawMoney() {
+        // Code to withdraw money
+    }
+
+    public void checkBalance() {
+        // Code to check balance
+    }
+}
+
+public class CohesionExample {
+    public static void main(String[] args) {
+        ATM atm = new ATM();
+        atm.withdrawMoney();
+        atm.checkBalance();
+    }
+}
+Read more on Cohesion in Java with Example.
+
+Conclusion
+We have discussed the following OOPs concepts with real-world examples:
+
+Object
+Class
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+Association
+Composition
+Aggregation
+Delegation
+Coupling
+Cohesion
+
+
+Static Keyword
+The static keyword in Java acts as an access modifier. When a particular class, method, or variable is declared using the static keyword, then those declared items. are prevented from modifications or gaining access. Their original values and properties are left unchanged.
+
+This Keyword
+The term "this" is a keyword in Java, which is a reference variable that refers to the current object. It is used in various places based on its requirements. A few of the implementations include:
+
+To invoke a method from the current class
+To invoke a constructor from the current class
+To refer an instance variable from the current class
+To return the instance of the current class from a method
+To pass the arguments to a method or constructor 
+
+What Is an Object?
+An object is the building block for every object-oriented programming language. An object is created when a specific class is used. An object may include properties and methods. Sometimes it may also include another object.
+
+What Is a Constructor?
+A constructor is a unique method that makes use of the class as a blueprint. It initializes the class objects and constructs them.
+
+A Java method is a location where users define the operations that they’d like to apply to their data members. A programmer defines the method inside the class.
+
+OOPs Concepts in Java
+Object-oriented programming is a structured approach to building software. Through it, classes are the building blueprints holding the methods, and objects are the basic building blocks that store the class's instances. 
+
+In Java, four governing laws define Object-Oriented Programming. They include:
+
+Abstraction 
+Encapsulation
+Inheritance
+Polymorphism
+
+How to Implement the Revolutionary OOPs Concepts in Java
+Lesson 10 of 43By Ravikiran A S
+
+Last updated on Jul 16, 202436225
+How to Implement the Revolutionary OOPs Concepts in Java
+PreviousNext
+Table of Contents
+What Is a Class?Static KeywordThis KeywordWhat Is an Object?What Is a Constructor?View More
+There’s a reason why Java is one of the top two programming languages in the world—it has some of the most powerful and useful features available. Like OOPs concepts in Java.
+
+OOPs concepts in Java mainly focus on providing an organized and clear structure to data members; and manipulation methods in a program in the form of an object. Unlike procedural programming, the revolutionary object-oriented programming approach improvises the programming capabilities and functionalities to an exponential level.
+
+What Is a Class?
+As we mentioned before, a class in object-oriented programming is a blueprint for storing data members and data manipulating methods combined in the form of a data structure. 
+
+To declare a class, we use the keyword class, followed by a user-defined name.
+
+Syntax:
+
+<Access Modifier> class <name_of_the_class>{
+
+ Data members;
+
+ Data methods;
+
+ Class Statements;
+
+}
+
+Example:
+
+package Simplilearn;
+
+import java.util.Scanner;
+
+public class Area {
+
+   public static void main (String[] args)
+
+   {
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter the length of the Rectangle:");
+
+    double l = scanner.nextDouble();
+
+    System.out.println("Enter the breadth of the Rectangle:");
+
+    double b = scanner.nextDouble();
+
+    double a = l*b;
+
+    System.out.println("Area of the given Rectangle is:"+a);
+
+   }
+
+}
+
+//Output:
+
+Enter the length of the Rectangle:
+
+21
+
+Enter the breadth of the Rectangle:
+
+34
+
+Area of the given Rectangle is:714.0
+
+Static Keyword
+The static keyword in Java acts as an access modifier. When a particular class, method, or variable is declared using the static keyword, then those declared items. are prevented from modifications or gaining access. Their original values and properties are left unchanged.
+
+Syntax:
+
+<access_modifier> static <name_of_the_class>;
+
+static <data type> <name_of_the_variable>;
+
+static <method_name>;
+
+Example:
+
+package Simplilearn;
+
+class Employee {
+
+ int E_ID;
+
+ String name;
+
+ static String Organisation = "XYZ-Org";
+
+ Employee(int e_id, String N) {
+
+  E_ID = e_id;
+
+  name = N;
+
+ }
+
+ void display() {
+
+  System.out.println(E_ID + " " + name + " " + Organisation);
+
+ }
+
+}
+
+public class Static {
+
+ public static void main(String args[]) {
+
+  Employee e1 = new Employee(10432, "John");
+
+  Employee e2 = new Employee(10483, "Anthony");
+
+  Employee e3 = new Employee(10232, "Steve");
+
+  Employee e4 = new Employee(10856, "Thomas");
+
+  e1.display();
+
+  e2.display();
+
+  e3.display();
+
+  e4.display();
+
+ }
+
+}
+
+//Output:
+
+10432 John XYZ-Org
+
+10483 Anthony XYZ-Org
+
+10232 Steve XYZ-Org
+
+10856 Thomas XYZ-Org
+
+This Keyword
+The term "this" is a keyword in Java, which is a reference variable that refers to the current object. It is used in various places based on its requirements. A few of the implementations include:
+
+To invoke a method from the current class
+To invoke a constructor from the current class
+To refer an instance variable from the current class
+To return the instance of the current class from a method
+To pass the arguments to a method or constructor 
+Syntax:
+
+this.<method_name>;
+
+this.<variable_name>;
+
+Example:
+
+package Simplilearn;
+
+class StudentData {
+
+ int ID;
+
+ String name;
+
+ int rank;
+
+ StudentData(int ID, String name, int rank) {
+
+  this.ID = ID;
+
+  this.name = name;
+
+  this.rank = rank;
+
+ }
+
+ void display() {
+
+  System.out.println(ID + " " + name + " " + rank);
+
+ }
+
+}
+
+public class This {
+
+ public static void main(String args[]) {
+
+  StudentData student1 = new StudentData(8010, "sam", 18);
+
+  StudentData student2 = new StudentData(8121, "Jennifer ", 3);
+
+  student1.display();
+
+  student2.display();
+
+ }
+
+}
+
+//Output:
+
+8010 sam 18
+
+8121 Jennifer 3
+
+What Is an Object?
+An object is the building block for every object-oriented programming language. An object is created when a specific class is used. An object may include properties and methods. Sometimes it may also include another object.
+
+Syntax:
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Employee e1 = new Employee ("Sharon", 102030, "B+");
+
+What Is a Constructor?
+A constructor is a unique method that makes use of the class as a blueprint. It initializes the class objects and constructs them.
+
+Syntax: 
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Student s1 = new Student (“Jayson”, 22901, “First-Grade”);
+
+What Is a Method?
+A Java method is a location where users define the operations that they’d like to apply to their data members. A programmer defines the method inside the class.
+
+Syntax:
+
+<Access_Modifier> <Datatype> <Method_Name> (<Parameters>) {
+
+ Return <Result>;
+
+}
+
+Example:
+
+Public float sum(float x, float y) {
+
+ return z=x+y;
+
+}
+
+OOPs Concepts in Java
+Object-oriented programming is a structured approach to building software. Through it, classes are the building blueprints holding the methods, and objects are the basic building blocks that store the class's instances. 
+
+In Java, four governing laws define Object-Oriented Programming. They include:
+
+Abstraction 
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction in Java OOPs Concepts
+abstraction.
+
+
+In object-oriented programming, abstraction keeps the user from viewing the implementation of the sophisticated methods. In other words, users can only see the necessary details and information that they wish to see and hide the implementation's unnecessary complexities.
+
+In Java, the abstraction is achieved when the following special classes are incorporated:
+
+Interface Class
+Abstract Class
+
+An interface in Java acts as a container that stores only the method's signatures and exclude the data members and their method definitions. Using interfaces reduces the code complexity and improves the code’s readability.
+
+An abstract class is almost identical to an interface, but the difference is, an abstract class can incorporate data members and their method definitions.
+
+Encapsulation is a procedure of binding the data members and data methods together inside the user-defined class, which should be declared private.
+
+Inheritance in Java OOPs Concepts 
+Inheritance is one of the object-oriented programming approaches that simplify software development. It enables the ability to build new classes by inheriting data members and methods, as well as the properties of previously defined classes.
+
+The inheriting class is called a child/derived class, and the inherited class is called the parent/base class. The process of inheriting the parent/base class is carried out in different ways. We will now discuss each one of them in detail. 
+
+How to Implement the Revolutionary OOPs Concepts in Java
+Lesson 10 of 43By Ravikiran A S
+
+Last updated on Jul 16, 202436225
+How to Implement the Revolutionary OOPs Concepts in Java
+PreviousNext
+Table of Contents
+What Is a Class?Static KeywordThis KeywordWhat Is an Object?What Is a Constructor?View More
+There’s a reason why Java is one of the top two programming languages in the world—it has some of the most powerful and useful features available. Like OOPs concepts in Java.
+
+OOPs concepts in Java mainly focus on providing an organized and clear structure to data members; and manipulation methods in a program in the form of an object. Unlike procedural programming, the revolutionary object-oriented programming approach improvises the programming capabilities and functionalities to an exponential level.
+
+What Is a Class?
+As we mentioned before, a class in object-oriented programming is a blueprint for storing data members and data manipulating methods combined in the form of a data structure. 
+
+To declare a class, we use the keyword class, followed by a user-defined name.
+
+Syntax:
+
+<Access Modifier> class <name_of_the_class>{
+
+ Data members;
+
+ Data methods;
+
+ Class Statements;
+
+}
+
+Example:
+
+package Simplilearn;
+
+import java.util.Scanner;
+
+public class Area {
+
+   public static void main (String[] args)
+
+   {
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter the length of the Rectangle:");
+
+    double l = scanner.nextDouble();
+
+    System.out.println("Enter the breadth of the Rectangle:");
+
+    double b = scanner.nextDouble();
+
+    double a = l*b;
+
+    System.out.println("Area of the given Rectangle is:"+a);
+
+   }
+
+}
+
+//Output:
+
+Enter the length of the Rectangle:
+
+21
+
+Enter the breadth of the Rectangle:
+
+34
+
+Area of the given Rectangle is:714.0
+
+Static Keyword
+The static keyword in Java acts as an access modifier. When a particular class, method, or variable is declared using the static keyword, then those declared items. are prevented from modifications or gaining access. Their original values and properties are left unchanged.
+
+Syntax:
+
+<access_modifier> static <name_of_the_class>;
+
+static <data type> <name_of_the_variable>;
+
+static <method_name>;
+
+Example:
+
+package Simplilearn;
+
+class Employee {
+
+ int E_ID;
+
+ String name;
+
+ static String Organisation = "XYZ-Org";
+
+ Employee(int e_id, String N) {
+
+  E_ID = e_id;
+
+  name = N;
+
+ }
+
+ void display() {
+
+  System.out.println(E_ID + " " + name + " " + Organisation);
+
+ }
+
+}
+
+public class Static {
+
+ public static void main(String args[]) {
+
+  Employee e1 = new Employee(10432, "John");
+
+  Employee e2 = new Employee(10483, "Anthony");
+
+  Employee e3 = new Employee(10232, "Steve");
+
+  Employee e4 = new Employee(10856, "Thomas");
+
+  e1.display();
+
+  e2.display();
+
+  e3.display();
+
+  e4.display();
+
+ }
+
+}
+
+//Output:
+
+10432 John XYZ-Org
+
+10483 Anthony XYZ-Org
+
+10232 Steve XYZ-Org
+
+10856 Thomas XYZ-Org
+
+This Keyword
+The term "this" is a keyword in Java, which is a reference variable that refers to the current object. It is used in various places based on its requirements. A few of the implementations include:
+
+To invoke a method from the current class
+To invoke a constructor from the current class
+To refer an instance variable from the current class
+To return the instance of the current class from a method
+To pass the arguments to a method or constructor 
+Syntax:
+
+this.<method_name>;
+
+this.<variable_name>;
+
+Example:
+
+package Simplilearn;
+
+class StudentData {
+
+ int ID;
+
+ String name;
+
+ int rank;
+
+ StudentData(int ID, String name, int rank) {
+
+  this.ID = ID;
+
+  this.name = name;
+
+  this.rank = rank;
+
+ }
+
+ void display() {
+
+  System.out.println(ID + " " + name + " " + rank);
+
+ }
+
+}
+
+public class This {
+
+ public static void main(String args[]) {
+
+  StudentData student1 = new StudentData(8010, "sam", 18);
+
+  StudentData student2 = new StudentData(8121, "Jennifer ", 3);
+
+  student1.display();
+
+  student2.display();
+
+ }
+
+}
+
+//Output:
+
+8010 sam 18
+
+8121 Jennifer 3
+
+What Is an Object?
+An object is the building block for every object-oriented programming language. An object is created when a specific class is used. An object may include properties and methods. Sometimes it may also include another object.
+
+Syntax:
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Employee e1 = new Employee ("Sharon", 102030, "B+");
+
+What Is a Constructor?
+A constructor is a unique method that makes use of the class as a blueprint. It initializes the class objects and constructs them.
+
+Syntax: 
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Student s1 = new Student (“Jayson”, 22901, “First-Grade”);
+
+What Is a Method?
+A Java method is a location where users define the operations that they’d like to apply to their data members. A programmer defines the method inside the class.
+
+Syntax:
+
+<Access_Modifier> <Datatype> <Method_Name> (<Parameters>) {
+
+ Return <Result>;
+
+}
+
+Example:
+
+Public float sum(float x, float y) {
+
+ return z=x+y;
+
+}
+
+OOPs Concepts in Java
+Object-oriented programming is a structured approach to building software. Through it, classes are the building blueprints holding the methods, and objects are the basic building blocks that store the class's instances. 
+
+In Java, four governing laws define Object-Oriented Programming. They include:
+
+Abstraction 
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction in Java OOPs Concepts
+abstraction.
+
+
+In object-oriented programming, abstraction keeps the user from viewing the implementation of the sophisticated methods. In other words, users can only see the necessary details and information that they wish to see and hide the implementation's unnecessary complexities.
+
+In Java, the abstraction is achieved when the following special classes are incorporated:
+
+Interface Class
+Abstract Class
+Interface in Java
+/interface
+
+An interface in Java acts as a container that stores only the method's signatures and exclude the data members and their method definitions. Using interfaces reduces the code complexity and improves the code’s readability.
+
+Syntax:
+
+<Acees_Modifier> interface <Interface_Name> {
+
+ <Method_Signatures>;
+
+}
+
+Example:
+
+package simplilearn;
+
+public interface Area {
+
+ public void Square();
+
+ public void Circle();
+
+ public void Rectangle();
+
+ public void Triangle();
+
+}
+
+//Class
+
+
+
+
+package simplilearn;
+
+import java.util.Scanner;
+
+public class shapeArea implements Area {
+
+ public void Circle() {
+
+  Scanner kb = new Scanner(System.in);
+
+  System.out.println("Enter the radius of the circle");
+
+  double r = kb.nextInt();
+
+  double areaOfCircle = 3.142 * r * r;
+
+  System.out.println("Area of the circle is" + areaOfCircle);
+
+ }
+
+ @Override
+
+ public void Square() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb2 = new Scanner(System.in);
+
+  System.out.println("Input the length of the side of the square");
+
+  double s = kb2.nextInt();
+
+  double areaOfSquare = s * s;
+
+  System.out.println("Area of the square is" + areaOfSquare);
+
+ }
+
+ @Override
+
+ public void Rectangle() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb3 = new Scanner(System.in);
+
+  System.out.println("Enter the length of the Rectangle");
+
+  double l = kb3.nextInt();
+
+  System.out.println("Enter the breadth of the Rectangle");
+
+  double b = kb3.nextInt();
+
+  double areaOfRectangle = l * b;
+
+  System.out.println("Area of the Rectangle is" + areaOfRectangle);
+
+ }
+
+ @Override
+
+ public void Triangle() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb4 = new Scanner(System.in);
+
+  System.out.println("Enter the base of the Triangle");
+
+  double base = kb4.nextInt();
+
+  System.out.println("Enter the height of the Triangle");
+
+  double h = kb4.nextInt();
+
+  double areaOfTriangle = 0.5 * base * h;
+
+  System.out.println("Area of the Triangle is" + areaOfTriangle);
+
+ }
+
+ public static void main(String[] args) {
+
+  shapeArea geometry = new shapeArea();
+
+  geometry.Circle();
+
+  geometry.Square();
+
+  geometry.Rectangle();
+
+  geometry.Triangle();
+
+ }
+
+}
+
+Abstract Classes in Java
+abstract-classes
+
+An abstract class is almost identical to an interface, but the difference is, an abstract class can incorporate data members and their method definitions.
+
+Syntax:
+
+<Access_Modifier> abstract class <Name_of_the_class> {
+
+ <Data Members>;
+
+ <Data Methods>;
+
+}
+
+Example:
+
+package Simplilearn;
+
+public abstract class Person {
+
+ private String Name;
+
+ private String Gender;
+
+ public Person(String nm, String Gen) {
+
+  this.Name = nm;
+
+  this.Gender = Gen;
+
+ }
+
+ public abstract void work();
+
+ @Override
+
+ public String toString() {
+
+  return "Name=" + this.Name + "::Gender=" + this.Gender;
+
+ }
+
+ public void changeName(String newName) {
+
+  this.Name = newName;
+
+ }
+
+ public void Exam() {
+
+  // TODO Auto-generated method stub
+
+  
+
+ }
+
+}
+
+Class
+
+package abstraction;
+
+public class Employee extends Person {
+
+ private int EmpId;
+
+ public Employee(String EmployeeName, String Gen, int EmployeeID) {
+
+  super(EmployeeName, Gen);
+
+  this.EmpId = EmployeeID;
+
+ }
+
+ @Override
+
+ public void Office() {
+
+  if (EmpId == 0) {
+
+   System.out.println("Employee Logged Out");
+
+  } else {
+
+   System.out.println("Employee Logged In");
+
+  }
+
+ }
+
+ public static void main(String args[]) {
+
+  Person employee = new Employee("Pavithra", "Female", 1094826);
+
+  employee.Office();
+
+  employee.changeName("Pavithra Tripathy");
+
+  System.out.println(employee.toString());
+
+ }
+
+}
+
+Encapsulation in Java OOPs Concepts
+encapsulation
+
+Encapsulation is a procedure of binding the data members and data methods together inside the user-defined class, which should be declared private.
+
+Syntax:
+
+<Access_Modifier> class <Class_Name> {
+
+ private <Data_Members>;
+
+ private <Data_Methods>;
+
+}
+
+Example:
+
+package Simplilearn;
+
+public class emp {
+
+ public static void main(String[] args) {
+
+  encapsule emp = new encapsule();
+
+  emp.setName("Robert");
+
+  System.out.println(emp.Name());
+
+ }
+
+}
+
+package Simplilearn;
+
+public class encapsule {
+
+ private String empName;
+
+ public String Name() {
+
+  return empName;
+
+ }
+
+ public void setName(String empName) {
+
+  this.empName = empName;
+
+ }
+
+}
+
+//Output:
+
+Robert
+
+Inheritance in Java OOPs Concepts 
+Inheritance is one of the object-oriented programming approaches that simplify software development. It enables the ability to build new classes by inheriting data members and methods, as well as the properties of previously defined classes.
+
+The inheriting class is called a child/derived class, and the inherited class is called the parent/base class. The process of inheriting the parent/base class is carried out in different ways. We will now discuss each one of them in detail. 
+
+Types of Inheritance
+
+Single inheritance consists of one parent class and one child class. Here, child classes inherit parent class methods and data members.
+
+Multi-level inheritance is also a parent-child inheritance relation, but the difference is another child class inherits the child class.
+
+Java will not support multiple inheritance, as it ends up with a severe ambiguity.
+Interface resolves the diamond problem.
+
+Hierarchical inheritance is a parent-child relationship. The only difference is that multiple child classes inherit a single parent class.
+
+How to Implement the Revolutionary OOPs Concepts in Java
+Lesson 10 of 43By Ravikiran A S
+
+Last updated on Jul 16, 202436225
+How to Implement the Revolutionary OOPs Concepts in Java
+PreviousNext
+Table of Contents
+What Is a Class?Static KeywordThis KeywordWhat Is an Object?What Is a Constructor?View More
+There’s a reason why Java is one of the top two programming languages in the world—it has some of the most powerful and useful features available. Like OOPs concepts in Java.
+
+OOPs concepts in Java mainly focus on providing an organized and clear structure to data members; and manipulation methods in a program in the form of an object. Unlike procedural programming, the revolutionary object-oriented programming approach improvises the programming capabilities and functionalities to an exponential level.
+
+What Is a Class?
+As we mentioned before, a class in object-oriented programming is a blueprint for storing data members and data manipulating methods combined in the form of a data structure. 
+
+To declare a class, we use the keyword class, followed by a user-defined name.
+
+Syntax:
+
+<Access Modifier> class <name_of_the_class>{
+
+ Data members;
+
+ Data methods;
+
+ Class Statements;
+
+}
+
+Example:
+
+package Simplilearn;
+
+import java.util.Scanner;
+
+public class Area {
+
+   public static void main (String[] args)
+
+   {
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter the length of the Rectangle:");
+
+    double l = scanner.nextDouble();
+
+    System.out.println("Enter the breadth of the Rectangle:");
+
+    double b = scanner.nextDouble();
+
+    double a = l*b;
+
+    System.out.println("Area of the given Rectangle is:"+a);
+
+   }
+
+}
+
+//Output:
+
+Enter the length of the Rectangle:
+
+21
+
+Enter the breadth of the Rectangle:
+
+34
+
+Area of the given Rectangle is:714.0
+
+Static Keyword
+The static keyword in Java acts as an access modifier. When a particular class, method, or variable is declared using the static keyword, then those declared items. are prevented from modifications or gaining access. Their original values and properties are left unchanged.
+
+Syntax:
+
+<access_modifier> static <name_of_the_class>;
+
+static <data type> <name_of_the_variable>;
+
+static <method_name>;
+
+Example:
+
+package Simplilearn;
+
+class Employee {
+
+ int E_ID;
+
+ String name;
+
+ static String Organisation = "XYZ-Org";
+
+ Employee(int e_id, String N) {
+
+  E_ID = e_id;
+
+  name = N;
+
+ }
+
+ void display() {
+
+  System.out.println(E_ID + " " + name + " " + Organisation);
+
+ }
+
+}
+
+public class Static {
+
+ public static void main(String args[]) {
+
+  Employee e1 = new Employee(10432, "John");
+
+  Employee e2 = new Employee(10483, "Anthony");
+
+  Employee e3 = new Employee(10232, "Steve");
+
+  Employee e4 = new Employee(10856, "Thomas");
+
+  e1.display();
+
+  e2.display();
+
+  e3.display();
+
+  e4.display();
+
+ }
+
+}
+
+//Output:
+
+10432 John XYZ-Org
+
+10483 Anthony XYZ-Org
+
+10232 Steve XYZ-Org
+
+10856 Thomas XYZ-Org
+
+This Keyword
+The term "this" is a keyword in Java, which is a reference variable that refers to the current object. It is used in various places based on its requirements. A few of the implementations include:
+
+To invoke a method from the current class
+To invoke a constructor from the current class
+To refer an instance variable from the current class
+To return the instance of the current class from a method
+To pass the arguments to a method or constructor 
+Syntax:
+
+this.<method_name>;
+
+this.<variable_name>;
+
+Example:
+
+package Simplilearn;
+
+class StudentData {
+
+ int ID;
+
+ String name;
+
+ int rank;
+
+ StudentData(int ID, String name, int rank) {
+
+  this.ID = ID;
+
+  this.name = name;
+
+  this.rank = rank;
+
+ }
+
+ void display() {
+
+  System.out.println(ID + " " + name + " " + rank);
+
+ }
+
+}
+
+public class This {
+
+ public static void main(String args[]) {
+
+  StudentData student1 = new StudentData(8010, "sam", 18);
+
+  StudentData student2 = new StudentData(8121, "Jennifer ", 3);
+
+  student1.display();
+
+  student2.display();
+
+ }
+
+}
+
+//Output:
+
+8010 sam 18
+
+8121 Jennifer 3
+
+What Is an Object?
+An object is the building block for every object-oriented programming language. An object is created when a specific class is used. An object may include properties and methods. Sometimes it may also include another object.
+
+Syntax:
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Employee e1 = new Employee ("Sharon", 102030, "B+");
+
+What Is a Constructor?
+A constructor is a unique method that makes use of the class as a blueprint. It initializes the class objects and constructs them.
+
+Syntax: 
+
+<class_name> <object_name> = new <class_name>(“<parameters”);
+
+Example:
+
+Student s1 = new Student (“Jayson”, 22901, “First-Grade”);
+
+What Is a Method?
+A Java method is a location where users define the operations that they’d like to apply to their data members. A programmer defines the method inside the class.
+
+Syntax:
+
+<Access_Modifier> <Datatype> <Method_Name> (<Parameters>) {
+
+ Return <Result>;
+
+}
+
+Example:
+
+Public float sum(float x, float y) {
+
+ return z=x+y;
+
+}
+
+OOPs Concepts in Java
+Object-oriented programming is a structured approach to building software. Through it, classes are the building blueprints holding the methods, and objects are the basic building blocks that store the class's instances. 
+
+In Java, four governing laws define Object-Oriented Programming. They include:
+
+Abstraction 
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction in Java OOPs Concepts
+abstraction.
+
+
+In object-oriented programming, abstraction keeps the user from viewing the implementation of the sophisticated methods. In other words, users can only see the necessary details and information that they wish to see and hide the implementation's unnecessary complexities.
+
+In Java, the abstraction is achieved when the following special classes are incorporated:
+
+Interface Class
+Abstract Class
+Interface in Java
+/interface
+
+An interface in Java acts as a container that stores only the method's signatures and exclude the data members and their method definitions. Using interfaces reduces the code complexity and improves the code’s readability.
+
+Syntax:
+
+<Acees_Modifier> interface <Interface_Name> {
+
+ <Method_Signatures>;
+
+}
+
+Example:
+
+package simplilearn;
+
+public interface Area {
+
+ public void Square();
+
+ public void Circle();
+
+ public void Rectangle();
+
+ public void Triangle();
+
+}
+
+//Class
+
+
+
+
+package simplilearn;
+
+import java.util.Scanner;
+
+public class shapeArea implements Area {
+
+ public void Circle() {
+
+  Scanner kb = new Scanner(System.in);
+
+  System.out.println("Enter the radius of the circle");
+
+  double r = kb.nextInt();
+
+  double areaOfCircle = 3.142 * r * r;
+
+  System.out.println("Area of the circle is" + areaOfCircle);
+
+ }
+
+ @Override
+
+ public void Square() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb2 = new Scanner(System.in);
+
+  System.out.println("Input the length of the side of the square");
+
+  double s = kb2.nextInt();
+
+  double areaOfSquare = s * s;
+
+  System.out.println("Area of the square is" + areaOfSquare);
+
+ }
+
+ @Override
+
+ public void Rectangle() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb3 = new Scanner(System.in);
+
+  System.out.println("Enter the length of the Rectangle");
+
+  double l = kb3.nextInt();
+
+  System.out.println("Enter the breadth of the Rectangle");
+
+  double b = kb3.nextInt();
+
+  double areaOfRectangle = l * b;
+
+  System.out.println("Area of the Rectangle is" + areaOfRectangle);
+
+ }
+
+ @Override
+
+ public void Triangle() {
+
+  // TODO Auto-generated method stub
+
+  Scanner kb4 = new Scanner(System.in);
+
+  System.out.println("Enter the base of the Triangle");
+
+  double base = kb4.nextInt();
+
+  System.out.println("Enter the height of the Triangle");
+
+  double h = kb4.nextInt();
+
+  double areaOfTriangle = 0.5 * base * h;
+
+  System.out.println("Area of the Triangle is" + areaOfTriangle);
+
+ }
+
+ public static void main(String[] args) {
+
+  shapeArea geometry = new shapeArea();
+
+  geometry.Circle();
+
+  geometry.Square();
+
+  geometry.Rectangle();
+
+  geometry.Triangle();
+
+ }
+
+}
+
+Abstract Classes in Java
+abstract-classes
+
+An abstract class is almost identical to an interface, but the difference is, an abstract class can incorporate data members and their method definitions.
+
+Syntax:
+
+<Access_Modifier> abstract class <Name_of_the_class> {
+
+ <Data Members>;
+
+ <Data Methods>;
+
+}
+
+Example:
+
+package Simplilearn;
+
+public abstract class Person {
+
+ private String Name;
+
+ private String Gender;
+
+ public Person(String nm, String Gen) {
+
+  this.Name = nm;
+
+  this.Gender = Gen;
+
+ }
+
+ public abstract void work();
+
+ @Override
+
+ public String toString() {
+
+  return "Name=" + this.Name + "::Gender=" + this.Gender;
+
+ }
+
+ public void changeName(String newName) {
+
+  this.Name = newName;
+
+ }
+
+ public void Exam() {
+
+  // TODO Auto-generated method stub
+
+  
+
+ }
+
+}
+
+Class
+
+package abstraction;
+
+public class Employee extends Person {
+
+ private int EmpId;
+
+ public Employee(String EmployeeName, String Gen, int EmployeeID) {
+
+  super(EmployeeName, Gen);
+
+  this.EmpId = EmployeeID;
+
+ }
+
+ @Override
+
+ public void Office() {
+
+  if (EmpId == 0) {
+
+   System.out.println("Employee Logged Out");
+
+  } else {
+
+   System.out.println("Employee Logged In");
+
+  }
+
+ }
+
+ public static void main(String args[]) {
+
+  Person employee = new Employee("Pavithra", "Female", 1094826);
+
+  employee.Office();
+
+  employee.changeName("Pavithra Tripathy");
+
+  System.out.println(employee.toString());
+
+ }
+
+}
+
+Encapsulation in Java OOPs Concepts
+encapsulation
+
+Encapsulation is a procedure of binding the data members and data methods together inside the user-defined class, which should be declared private.
+
+Syntax:
+
+<Access_Modifier> class <Class_Name> {
+
+ private <Data_Members>;
+
+ private <Data_Methods>;
+
+}
+
+Example:
+
+package Simplilearn;
+
+public class emp {
+
+ public static void main(String[] args) {
+
+  encapsule emp = new encapsule();
+
+  emp.setName("Robert");
+
+  System.out.println(emp.Name());
+
+ }
+
+}
+
+package Simplilearn;
+
+public class encapsule {
+
+ private String empName;
+
+ public String Name() {
+
+  return empName;
+
+ }
+
+ public void setName(String empName) {
+
+  this.empName = empName;
+
+ }
+
+}
+
+//Output:
+
+Robert
+
+Inheritance in Java OOPs Concepts 
+Inheritance is one of the object-oriented programming approaches that simplify software development. It enables the ability to build new classes by inheriting data members and methods, as well as the properties of previously defined classes.
+
+The inheriting class is called a child/derived class, and the inherited class is called the parent/base class. The process of inheriting the parent/base class is carried out in different ways. We will now discuss each one of them in detail. 
+
+Types of Inheritance
+Single
+single
+
+Single inheritance consists of one parent class and one child class. Here, child classes inherit parent class methods and data members.
+
+Multi-level inheritance is also a parent-child inheritance relation, but the difference is another child class inherits the child class.
+
+Java will not support multiple inheritance, as it ends up with a severe ambiguity.
+Interface resolves the diamond problem.
+
+Hierarchical inheritance is a parent-child relationship. The only difference is that multiple child classes inherit a single parent class.
+
+The hybrid inheritance can be a combination of any of the three types of inheritances supported in Java.
+
+When a class inherits an instance from a different class or an instance of its class, then the relation is a HAS-A type.
+
+Example: Orange HAS-A citrus taste.
+
+When a class inherits methods and members from different classes, then the relation is said to be an IS-A Relation.
+
+Example: Orange IS-A Fruit. 
+
+Polymorphism in Java OOPs Concepts 
+Polymorphism is a Java programming language ability that is used to process an object, operator, and method in multiple ways based on the data type used, and the class implementing them. Many programming concepts explain the procedure of polymorphism in Java. 
+
+The process of method overloading is achieved when a class has two or more methods with the same name, but the specific method is selected based on the number of parameters declared.
+
+Method overriding is a procedure in which a child class is allowed to implement a specific class present in the parent class.
+
+Operator Overloading and Operator Overriding
+Java does not support operator overloading, nor operator overriding. The designers of the Java programming language understood the ambiguities of operator overloading and operator overriding in the C++ programming language. Hence, to avoid the complications, they have opted not to include operator overloading and operator overriding.
+
+Static Polymorphism
+Static polymorphism/compile-time polymorphism is executed during the compilation stage. Here, the overloading method is resolved in the compilation stage.
+
+Dynamic Polymorphism
+Dynamic polymorphism/run-time polymorphism is handled during the program execution stage. Here, the overriding method is resolved in the execution stage.
+
+Super Keyword
+The term "super" is a predefined keyword in Java that refers to the immediate parent class object or method defined in the program. In this procedure, whenever you create an instance of a subclass, then an instance of the parent class is also automatically created. The super reference variable will implicitly refer to that.
+
+In object-oriented programming, the language offers accessibility to the object, method, and data member based on the access specifier defined. Similarly, in the Java programming language, we have four different access specifiers. 
+
+Default
+If the programmer does not provide the access specifier, the compiler will consider the default access specifier. In Java, the default access is public. However, this access is limited to the current package that the user is working on. The following is a visual coding example that can help to clarify this process: 
+
+Public
+The public access specifier provides access to the data members, methods, and objects universally.
+
+Protected
+The protected access specifier provides access to the data members, methods, and objects if the subclasses trying to access them are in the same package where the protected data is defined. Otherwise, the outside class should be extending the protected class, or else they will be inaccessible. 
+
+Private
+The access for private specifiers strictly limits the access of the variables and methods to only the class in which they are declared. Outside of that, they cannot be accessed.
+
+Method Calling in Java OOPs Concepts
+Java only supports call by value. Here, we pass the values to the specific method, and then after the implication of the method, we get the expected results.
+
+
+
+
+
